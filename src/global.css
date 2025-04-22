@@ -1,0 +1,42 @@
+@import url(../src/reset.css);
+
+:root {
+  --color-background-primary: #f9fafb;
+  --color-font-primary: #1f2937;
+  --color-font-secondary: #4b5563;
+  --color-primary-button: #2563eb;
+  --color-button-hover: #3b82f6;
+  --color-border: #d1d5db;
+}
+
+:dark-mode:root {
+  --color-background-primary: #1e1e2a;
+  --color-font-primary: #e4e4e7;
+  --color-font-secondary: #c9c9cc;
+  --color-primary-button: #2563eb;
+  --color-button-hover: #3b82f6;
+  --color-border: #2c2c3a;
+}
+
+body {
+  background-image: url(./assets/background4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-font-primary);
+}
+/* Elemento | Cor | Hex
+Fundo (background) | Branco suave | #F9FAFB (ou #FAFAF9)
+Texto principal | Cinza escuro | #1F2937 (Tailwind's gray-800)
+Texto secundário | Cinza médio ou bege escuro | #4B5563 ou #7C6F63
+Botão primário | Azul médio | #2563EB
+Hover do botão | Azul claro | #3B82F6
+Bordas e detalhes | Cinza claro | #D1D5DB */
+
+/* Background principal	Cinza bem escuro neutro	#1E1E2A ou #121212
+Texto primário	Branco suave	#E4E4E7
+Texto secundário	Bege acinzentado claro	#C9C9CC ou #BFAF9F
+Botão primário	Azul escuro	#2563EB (Tailwind's blue-600)
+Hover do botão	Azul claro	#3B82F6 (Tailwind's blue-500)
+Borda ou detalhes	Cinza médio ou azul escuro	#2C2C3A ou #1E40AF */

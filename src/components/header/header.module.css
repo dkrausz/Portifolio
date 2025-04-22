@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 2rem;
+  padding-inline: 4rem;
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 100px;
+}
+
+a {
+  margin-inline: 0.5rem;
+}
