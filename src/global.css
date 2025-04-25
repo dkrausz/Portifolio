@@ -9,7 +9,7 @@
   --color-border: #d1d5db;
 }
 
-:dark-mode:root {
+.dark-mode:root {
   --color-background-primary: #1e1e2a;
   --color-font-primary: #e4e4e7;
   --color-font-secondary: #c9c9cc;
@@ -19,13 +19,18 @@
 }
 
 body {
-  background-image: url(./assets/background4.png);
+  background-image: url(./assets/light_background.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   color: var(--color-font-primary);
 }
+
+html.dark-mode body {
+  background-image: url(./assets/dark_brackground.png);
+}
+
 /* Elemento | Cor | Hex
 Fundo (background) | Branco suave | #F9FAFB (ou #FAFAF9)
 Texto principal | Cinza escuro | #1F2937 (Tailwind's gray-800)

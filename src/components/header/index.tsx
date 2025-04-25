@@ -8,14 +8,14 @@ export function Header() {
     <header>
       <img src={avatar} alt="" className={styles.avatar} />
       <div>
-        <a href="">
-          <FaLinkedin size={24} />
+        <a href="https://www.linkedin.com/in/danilo-krausz-a7a603113/" target="_blank">
+          <FaLinkedin size={30} />
         </a>
-        <a href="">
-          <FaGithub size={24} />
+        <a href="https://github.com/dkrausz" target="_blank">
+          <FaGithub size={30} />
         </a>
-        <a href="">
-          <MdEmail size={24} />
+        <a href="mailto:danilo.krausz@gmail.com" target="_blank">
+          <MdEmail size={30} />
         </a>
       </div>
     </header>
