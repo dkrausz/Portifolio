@@ -1,0 +1,41 @@
+.project__container {
+  width: 30%;
+  min-width: 10rem;
+  /* background-color: rgba(0, 26, 61, 0.9); */
+  background-color: var(--color-background-primary);
+  padding: 5px 10px;
+  border: 2px solid var(--color-font-primary);
+  border-radius: 5px;
+  color: var(--color-font-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-block: 1rem;
+}
+
+p {
+  color: var(--color-font-primary);
+  margin-block: 1rem;
+}
+
+img {
+  width: 100%;
+  border-radius: 2 px;
+}
+
+.card__button {
+  display: block;
+  margin: auto;
+  border: 2px solid var(--color-font-primary);
+  border-radius: 5px;
+  width: 8rem;
+  height: 2rem;
+  margin-block: 1rem;
+  cursor: pointer;
+  text-align: center;
+}

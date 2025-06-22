@@ -1,0 +1,22 @@
+.tech__container {
+  width: 7rem;
+  height: 2.5rem;
+  border: solid 2px var(--color-font-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  gap: 5px;
+  background-color: var(--color-background-primary);
+}
+
+.tech__container:hover {
+  transition: transform ease-in-out 0.5s;
+  transform: scale(1.1);
+}
+
+.tech__container > img {
+  width: 30%;
+  max-width: 34px;
+}

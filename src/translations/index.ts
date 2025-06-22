@@ -5,6 +5,11 @@ export type TLanguage = {
   about: string;
   technologies: string;
   projects: string;
+  readMore: string;
+  gitHub: string;
+  deploy: string;
+  aboutMe: string;
+  homeText: string;
 };
 
 export enum Language {

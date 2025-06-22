@@ -1,0 +1,23 @@
+.about__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 4rem;
+}
+.about__container > img {
+  max-width: 1024px;
+}
+
+.text__container {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  width: 95%;
+  background-color: color-mix(in srgb, var(--color-background-primary) 75%, transparent);
+}
+
+.title {
+  font-size: 3rem;
+  background-color: color-mix(in srgb, var(--color-background-primary) 40%, transparent);
+}

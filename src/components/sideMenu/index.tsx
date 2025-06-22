@@ -3,7 +3,7 @@ import { IoHome } from "react-icons/io5";
 import { MdOutlineNightlight, MdOutlineLightMode } from "react-icons/md";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { GrProjects } from "react-icons/gr";
-import { Switch } from "radix-ui";
+import { RadioGroup, Switch } from "radix-ui";
 import styles from "./sideMenu.module.css";
 import { useContext, useEffect, useState } from "react";
 import AmericanFlag from "../../assets/united-states-flag-icon.svg";
@@ -11,25 +11,26 @@ import BrazilianFlag from "../../assets/brazil-flag-icon.svg";
 import { portifolioContext } from "../../providers/portifolioContext";
 import { RiInfoCardLine } from "react-icons/ri";
 import { Language } from "../../translations";
+import { useNavigate } from "react-router-dom";
 
 export function SideMenu() {
   const { darkMode, changeDarkMode, changeLanguage, lang, text } = useContext(portifolioContext);
-
   const [isEnglish, setIsEnglish] = useState(false);
+  const navigate = useNavigate();
 
   const changeTOEnglish = (value: boolean) => {
     setIsEnglish(value);
     changeLanguage(value);
   };
 
+  const handleMenu = (page: string) => {
+    navigate(`/${page}`);
+  };
+
   useEffect(() => {
     if (lang === Language.EN) {
-      console.log("lang", lang === Language.EN);
-
       changeTOEnglish(true);
     } else {
-      console.log("mudar para pt");
-
       changeTOEnglish(false);
     }
   }, []);
@@ -37,40 +38,42 @@ export function SideMenu() {
   return (
     <aside>
       <nav>
-        <ul>
-          <li className={styles.navItem}>
-            <IoHome></IoHome>Home
-          </li>
-          <li className={styles.navItem}>
-            <RiInfoCardLine></RiInfoCardLine>
+        <RadioGroup.Root className={styles.nav__list} defaultValue="home" onValueChange={(value) => handleMenu(value)}>
+          <RadioGroup.Item value="home" className={styles.navItem}>
+            <IoHome />
+            Home
+          </RadioGroup.Item>
+          <RadioGroup.Item value="about" className={styles.navItem}>
+            <RiInfoCardLine />
             {text.about}
-          </li>
-          <li className={styles.navItem}>
-            <CgSmartphoneChip></CgSmartphoneChip>
+          </RadioGroup.Item>
+          <RadioGroup.Item value="tech" className={styles.navItem}>
+            <CgSmartphoneChip />
             {text.technologies}
-          </li>
-          <li className={styles.navItem}>
-            <GrProjects></GrProjects>
+          </RadioGroup.Item>
+          <RadioGroup.Item value="projects" className={styles.navItem}>
+            <GrProjects />
             {text.projects}
-          </li>
+          </RadioGroup.Item>
+        </RadioGroup.Root>
 
-          <li className={styles.language__container}>
-            <img src={BrazilianFlag} alt="Brandeira Brasileira" className={styles.flag} />
+        <div className={styles.language__container}>
+          <img src={BrazilianFlag} alt="Brandeira Brasileira" className={styles.flag} />
 
-            <Switch.Root className={styles.SwitchRoot} checked={isEnglish} onCheckedChange={changeTOEnglish}>
-              <Switch.Thumb className={styles.SwitchThumb} />
-            </Switch.Root>
-            <img src={AmericanFlag} alt="Bandeira Americana" className={styles.flag} />
-          </li>
+          <Switch.Root className={styles.SwitchRoot} checked={isEnglish} onCheckedChange={changeTOEnglish}>
+            <Switch.Thumb className={styles.SwitchThumb} />
+          </Switch.Root>
+          <img src={AmericanFlag} alt="Bandeira Americana" className={styles.flag} />
+        </div>
 
-          <li className={styles.language__container}>
-            <MdOutlineLightMode size={40} className={styles.flag} />
-            <Switch.Root className={styles.SwitchRoot} checked={darkMode} onCheckedChange={changeDarkMode}>
-              <Switch.Thumb className={styles.SwitchThumb} />
-            </Switch.Root>
-            <MdOutlineNightlight size={40} className={styles.flag} />
-          </li>
-        </ul>
+        <div className={styles.language__container}>
+          <MdOutlineLightMode size={40} className={styles.flag} />
+          <Switch.Root className={styles.SwitchRoot} checked={darkMode} onCheckedChange={changeDarkMode}>
+            <Switch.Thumb className={styles.SwitchThumb} />
+          </Switch.Root>
+          <MdOutlineNightlight size={40} className={styles.flag} />
+        </div>
+        {/* </ul> */}
       </nav>
     </aside>
   );

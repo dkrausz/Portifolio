@@ -1,0 +1,21 @@
+.home__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding-block: 2rem;
+}
+
+.text__container {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  width: 80%;
+  max-width: 1200px;
+  background-color: color-mix(in srgb, var(--color-background-primary) 75%, transparent);
+}
+
+.title {
+  font-size: 3rem;
+  background-color: color-mix(in srgb, var(--color-background-primary) 40%, transparent);
+}

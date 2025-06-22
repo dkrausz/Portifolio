@@ -1,0 +1,52 @@
+.overlay {
+  z-index: 9988;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal__container {
+  z-index: 9989;
+  min-width: 32rem;
+  height: 90vh;
+  border-radius: 6px;
+  padding: 2rem 3rem;
+  background-color: var(--color-background-primary);
+  color: var(--color-font-primary);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow-y: scroll;
+}
+
+.tech__list {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.link__container {
+  display: flex;
+  justify-content: center;
+  margin-block: 2rem;
+  font-size: 1.2rem;
+}
+
+.close__button {
+  font-size: 2rem;
+  border: solid 2px var(--color-font-primary);
+  border-radius: 2px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  right: 20px;
+  width: 2rem;
+  cursor: pointer;
+}
