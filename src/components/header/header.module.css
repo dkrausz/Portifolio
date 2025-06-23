@@ -7,11 +7,25 @@ header {
 }
 
 .avatar {
-  width: 100px;
+  width: 120px;
   border-radius: 100px;
 }
 
 a {
   margin-inline: 0.5rem;
   color: var(--color-primary-font);
+}
+
+@media (max-width: 425px) {
+  header {
+    padding-inline: 2rem;
+  }
+  .avatar {
+    width: 90px;
+    border-radius: 100px;
+  }
+
+  .menu__button {
+    margin-left: 1rem;
+  }
 }

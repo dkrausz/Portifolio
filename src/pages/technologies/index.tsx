@@ -42,8 +42,8 @@ export function Technologies() {
       <div className={styles.tech__container}>
         <h2>Languages</h2>
         <ul className={styles.techList}>
-          {technologies.languages.map((tech) => {
-            return <Tech tech={tech} width="9rem" />;
+          {technologies.languages.map((tech, index) => {
+            return <Tech tech={tech} width="9rem" key={index} />;
           })}
         </ul>
       </div>
@@ -51,16 +51,16 @@ export function Technologies() {
       <div className={styles.tech__container}>
         <h2>Bibliotecas</h2>
         <ul className={styles.techList}>
-          {technologies.libraries.map((tech) => {
-            return <Tech tech={tech} width="9rem" />;
+          {technologies.libraries.map((tech, index) => {
+            return <Tech tech={tech} width="9rem" key={index} />;
           })}
         </ul>
       </div>
       <div className={styles.tech__container}>
         <h2>Ferramentas</h2>
         <ul className={styles.techList}>
-          {technologies.tools.map((tech) => {
-            return <Tech tech={tech} width="9rem" />;
+          {technologies.tools.map((tech, index) => {
+            return <Tech tech={tech} width="9rem" key={index} />;
           })}
         </ul>
       </div>

@@ -34,9 +34,7 @@ button {
 aside {
   font-size: 2rem;
   display: flex;
-
   margin: 1rem;
-
   border-right: solid 2px var(--color-font-primary);
   width: 340px;
   height: 70vh;
@@ -44,6 +42,7 @@ aside {
 
 nav {
   margin-inline: auto;
+  padding-inline: 0.5rem;
 }
 
 .nav__list {
@@ -83,4 +82,11 @@ nav {
 }
 .flag {
   width: 50px;
+}
+
+@media (max-width: 425px) {
+  aside {
+    width: 100%;
+    height: 100vh;
+  }
 }

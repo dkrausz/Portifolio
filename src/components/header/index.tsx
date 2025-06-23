@@ -1,9 +1,25 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { GiHamburgerMenu } from "react-icons/gi";
 import avatar from "../../assets/avatar.jpg";
 import styles from "./header.module.css";
+import { useContext } from "react";
+import { portifolioContext } from "../../providers/portifolioContext";
+import { useLocation } from "react-router-dom";
 
-export function Header() {
+interface headerProps {
+  isMobile: boolean;
+}
+
+export function Header({ isMobile }: headerProps) {
+  const { handleOpenMenu, handleDefaultPage } = useContext(portifolioContext);
+  const locate = useLocation();
+
+  const handleMenu = () => {
+    handleDefaultPage(locate.pathname);
+    handleOpenMenu(true);
+  };
+
   return (
     <header>
       <img src={avatar} alt="" className={styles.avatar} />
@@ -17,6 +33,7 @@ export function Header() {
         <a href="mailto:danilo.krausz@gmail.com" target="_blank">
           <MdEmail size={30} />
         </a>
+        {isMobile ? <GiHamburgerMenu size={60} className={styles.menu__button} onClick={() => handleMenu()} /> : null}
       </div>
     </header>
   );

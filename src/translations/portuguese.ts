@@ -14,7 +14,7 @@ No front-end, venho trabalhando com React e TypeScript, criando interfaces respo
 Atualmente, estou em busca da minha primeira oportunidade como desenvolvedor júnior, seja no front, back ou fullstack. Como moro fora do Brasil, estou focando em vagas remotas.
 Se quiser conhecer meus projetos, código ou redes sociais, os links estão logo ali no topo da página. Fica à vontade pra explorar!`,
 
-  homeText: `Desenvolvedor Full Stack JavaScript | React | Node.js | TypeScript Apaixonado por tecnologia, desempenho e código limpo. Trabalho com desenvolvimento de aplicações web completas —
+  homeText: `Desenvolvedor Full Stack JavaScript | React | Node.js | TypeScript. Apaixonado por tecnologia, desempenho e código limpo. Trabalho com desenvolvimento de aplicações web completas —
    do banco de dados ao componente do front. Já criei projetos usando Express, JWT, Prisma, Zod, Tailwind, entre outras ferramentas modernas.
    Confira meus projetos, ou me mande uma mensagem. Os links estão no topo da página!`,
 };

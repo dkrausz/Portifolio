@@ -7,15 +7,20 @@ interface IPortifolioProps {
 
 interface IPortifolioContext {
   darkMode: boolean;
+  OpenMenu: boolean;
+  defaultPage: string;
   lang: Language;
   text: TLanguage;
   changeDarkMode: (value: boolean) => void;
   changeLanguage: (value: boolean) => void;
+  handleOpenMenu: (value: boolean) => void;
+  handleDefaultPage: (page: string) => void;
 }
 
 export const portifolioContext = createContext({} as IPortifolioContext);
 
 export const PortifolioContextProvider = ({ children }: IPortifolioProps) => {
+  const [defaultPage, setDefautlPage] = useState("home");
   const [lang, setLang] = useState<Language>(() => {
     const savedLang = localStorage.getItem("lang") as Language | null;
     return savedLang ?? getDefaultLanguage();
@@ -24,6 +29,8 @@ export const PortifolioContextProvider = ({ children }: IPortifolioProps) => {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
+
+  const [OpenMenu, setOpenMenu] = useState(false);
 
   const text = languages[lang];
 
@@ -48,6 +55,14 @@ export const PortifolioContextProvider = ({ children }: IPortifolioProps) => {
     }
   };
 
+  const handleOpenMenu = (value: boolean) => {
+    setOpenMenu(value);
+  };
+
+  const handleDefaultPage = (page: string) => {
+    setDefautlPage(page);
+  };
+
   useEffect(() => {
     const root = document.documentElement;
     root.classList.add("root");
@@ -60,9 +75,9 @@ export const PortifolioContextProvider = ({ children }: IPortifolioProps) => {
     }
   }, [darkMode]);
 
-  useEffect(() => {
-    console.log(lang);
-  }, [lang]);
-
-  return <portifolioContext.Provider value={{ darkMode, changeDarkMode, lang, changeLanguage, text }}>{children}</portifolioContext.Provider>;
+  return (
+    <portifolioContext.Provider value={{ darkMode, changeDarkMode, lang, changeLanguage, text, handleOpenMenu, OpenMenu, defaultPage, handleDefaultPage }}>
+      {children}
+    </portifolioContext.Provider>
+  );
 };

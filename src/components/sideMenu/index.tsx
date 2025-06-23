@@ -1,5 +1,4 @@
 import { IoHome } from "react-icons/io5";
-// import { FcAbout } from "react-icons/fc";
 import { MdOutlineNightlight, MdOutlineLightMode } from "react-icons/md";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { GrProjects } from "react-icons/gr";
@@ -11,11 +10,12 @@ import BrazilianFlag from "../../assets/brazil-flag-icon.svg";
 import { portifolioContext } from "../../providers/portifolioContext";
 import { RiInfoCardLine } from "react-icons/ri";
 import { Language } from "../../translations";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function SideMenu() {
-  const { darkMode, changeDarkMode, changeLanguage, lang, text } = useContext(portifolioContext);
+  const { darkMode, changeDarkMode, changeLanguage, lang, text, OpenMenu, handleOpenMenu, handleDefaultPage, defaultPage } = useContext(portifolioContext);
   const [isEnglish, setIsEnglish] = useState(false);
+  const locate = useLocation();
   const navigate = useNavigate();
 
   const changeTOEnglish = (value: boolean) => {
@@ -24,10 +24,15 @@ export function SideMenu() {
   };
 
   const handleMenu = (page: string) => {
+    if (OpenMenu) {
+      handleOpenMenu(false);
+    }
+    handleDefaultPage(page);
     navigate(`/${page}`);
   };
 
   useEffect(() => {
+    handleDefaultPage(locate.pathname.replace("/", ""));
     if (lang === Language.EN) {
       changeTOEnglish(true);
     } else {
@@ -38,8 +43,8 @@ export function SideMenu() {
   return (
     <aside>
       <nav>
-        <RadioGroup.Root className={styles.nav__list} defaultValue="home" onValueChange={(value) => handleMenu(value)}>
-          <RadioGroup.Item value="home" className={styles.navItem}>
+        <RadioGroup.Root className={styles.nav__list} defaultValue={defaultPage} value={defaultPage} onValueChange={(value) => handleMenu(value)}>
+          <RadioGroup.Item value={"home"} className={styles.navItem}>
             <IoHome />
             Home
           </RadioGroup.Item>
@@ -73,7 +78,6 @@ export function SideMenu() {
           </Switch.Root>
           <MdOutlineNightlight size={40} className={styles.flag} />
         </div>
-        {/* </ul> */}
       </nav>
     </aside>
   );

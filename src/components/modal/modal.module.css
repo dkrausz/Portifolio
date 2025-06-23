@@ -9,7 +9,8 @@
 
 .modal__container {
   z-index: 9989;
-  min-width: 32rem;
+  width: 70%;
+  min-width: 20rem;
   height: 90vh;
   border-radius: 6px;
   padding: 2rem 3rem;
@@ -28,8 +29,13 @@
 
 .tech__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+}
+
+.modal__image {
+  width: 100%;
 }
 
 .link__container {
@@ -49,4 +55,10 @@
   right: 20px;
   width: 2rem;
   cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .modal__container {
+    width: 100%;
+  }
 }
