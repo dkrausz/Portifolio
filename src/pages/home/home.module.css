@@ -19,3 +19,7 @@
   font-size: 3rem;
   background-color: color-mix(in srgb, var(--color-background-primary) 40%, transparent);
 }
+
+.name__title {
+  background-color: color-mix(in srgb, var(--color-background-primary) 75%, transparent);
+}

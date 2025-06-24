@@ -7,8 +7,12 @@ export function Home() {
   return (
     <div className={styles.home__container}>
       <h1 className={styles.title}>Home</h1>
-      <h2>Danilo Krausz</h2>
-      <p className={styles.text__container}>{text.homeText}</p>
+      <h2 className={styles.name__title}>Danilo Krausz</h2>
+      <div className={styles.text__container}>
+        {text.homeText.split("\n\n").map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
     </div>
   );
 }
