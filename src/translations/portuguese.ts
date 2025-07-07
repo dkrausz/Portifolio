@@ -6,6 +6,9 @@ export const ptBr: TLanguage = {
   projects: "Projetos",
   readMore: "Saiba mais",
   gitHub: "Acesse o repositório",
+  languages: "Linguagens",
+  libraries: "Bibliotecas",
+  tools: "Ferramentas",
   deploy: "Acesse o projeto",
   aboutMe: `Meu nome é Danilo Krausz e, ao longo da minha vida, sempre fui movido por curiosidade, 
   autonomia e vontade de aprender coisas novas.\n\n
@@ -27,7 +30,7 @@ Se quiser conhecer meus projetos, meu código ou minhas redes, os links estão a
 
   homeText: `Desenvolvedor Full Stack JavaScript | React | Node.js | TypeScript.\n\n Apaixonado por tecnologia, desempenho e código limpo. Trabalho com desenvolvimento de aplicações web completas —
    do banco de dados ao componente do front.\n\n Já criei projetos usando Express, JWT, Prisma, Zod, Tailwind, entre outras ferramentas modernas.
-   Confira meus projetos, ou me mande uma mensagem. Os links estão no topo da página!`,
+   Confira meus projetos, ou me mande uma mensagem. \n\nOs links estão no topo da página!`,
 };
 
 /*Meu nome é Danilo Krausz e, ao longo da minha vida, sempre fui movido por curiosidade, autonomia e vontade de aprender coisas novas.

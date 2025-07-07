@@ -7,6 +7,9 @@ export type TLanguage = {
   projects: string;
   readMore: string;
   gitHub: string;
+  languages: string;
+  libraries: string;
+  tools: string;
   deploy: string;
   aboutMe: string;
   homeText: string;
